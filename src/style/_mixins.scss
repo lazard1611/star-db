@@ -1,0 +1,27 @@
+@mixin bp($width, $value: max) {
+	@if $value == min {
+		@media screen and (min-width: $width) {
+			@content;
+		}
+	} @else if $value == max {
+		@media screen and (max-width: $width) {
+			@content;
+		}
+	} @else {
+		@media (max-width: $width) and (min-width: $value) {
+			@content;
+		}
+	}
+}
+
+@mixin font_face($file_name, $font_name: $file_name, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: quote($font_name);
+		src: url('../fonts/' + $file-name + '.woff2') format('woff2'), url('../fonts/' + $file-name + '.woff') format('woff');
+		font-weight: $weight;
+		font-style: $style;
+		font-display: swap;
+	}
+}
+
+

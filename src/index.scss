@@ -1,0 +1,50 @@
+@import "main";
+
+@include font_face('GrtskGiga-Regular', 'GrtskGiga', 400);
+@include font_face('GrtskGiga-Medium', 'GrtskGiga', 500);
+@include font_face('GrtskGiga-Semibold', 'GrtskGiga', 600);
+@include font_face('GrtskGiga-Bold', 'GrtskGiga', 700);
+
+:root {
+  @include bp($point_3, min) {
+    --gl-indent: 2.4rem;
+    --height-header: 10rem;
+  }
+
+  @include bp($point_3 - 1) {
+    --gl-indent: 1.6rem;
+    --height-header: 6.6rem;
+  }
+}
+
+html {
+  height: 100%;
+  font-family: $font_1;
+  line-height: 1.33;
+  font-size: $fontSizeBase;
+
+  @include bp($point_2, min) {
+    font-size: calc(100vw / 1440 * 10);
+  }
+
+  @include bp($point_4 - 1) {
+    font-size: calc(100vw / 375 * 10);
+  }
+
+  @media (min-width: 768px) and (max-height: 500px) {
+    font-size: 0.6vw;
+  }
+}
+
+body {
+  position: relative;
+  display: block;
+
+  height: 100%;
+  margin: auto;
+  color: $colorTextBase;
+
+  &.body--open_menu_state {
+    overflow: hidden;
+  }
+}

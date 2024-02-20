@@ -1,0 +1,47 @@
+//---------------------------------------------fonts
+$font_1: 'GrtskGiga', sans-serif;
+$fontSizeBase: 10px;
+//---------------------------------------------fonts###
+//---------------------------------------------Points
+$point_0: 1440px;
+$point_1: 1200px;
+$point_2: 1024px;
+$point_3: 768px;
+$point_4: 375px;
+//---------------------------------------------Points###
+//---------------------------------------------layout
+$pageWidth: 80rem;
+//---------------------------------------------layout###
+//---------------------------------------------colors
+$white: #fff;
+$black: #000000;
+$gray: #434343;
+$grayLight: #BEBEBE;
+$grayDark: #373737;
+$yellow: #FFCB46;
+
+$colorTextBase: $grayDark;
+$colorLinkBase: #3856E5;
+$bodyBg: $grayLight;
+//---------------------------------------------colors###
+//---------------------------------------------global values
+$glRadius: 1rem;
+//---------------------------------------------global values###
+//---------------------------------------------media points
+$desktopLg: 1920px;
+$desktop: 1440px;
+$laptop: 1200px;
+$tabletPortrait: 991px;
+$tablet: 768px;
+$small: 375px;
+//---------------------------------------------media points###
+//---------------------------------------------form style
+$input_height: 2rem;
+$input_offset: 1rem;
+$input_font_size: $fontSizeBase;
+$input_text_color: $black;
+$input_border_color: $black;
+$input_radius: 0.2rem;
+$input_border_color_active: $colorLinkBase;
+$input_placeholder_color: $gray;
+//---------------------------------------------form style###
