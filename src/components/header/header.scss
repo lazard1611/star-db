@@ -6,26 +6,103 @@
 	top: 0;
 	left: 0;
 
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
 	height: var(--height-header);
 	width: 100%;
 
-	@include bp($point_2, min) {
-		padding: 2.4rem var(--gl-indent);
-	}
+	padding: 1rem var(--gl-indent);
 
-	@include bp($point_2 - 1) {
-		padding: 1.6rem var(--gl-indent);
+	&:after {
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		display: block;
+		width: 100%;
+		height: 100%;
+
+		background-color: rgba(black, 0.6);
+		content: '';
 	}
 }
 
 .header_in {
+	width: 100%;
+	max-width: $pageWidth;
+	margin: 0 auto;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 }
 
-.header_logo_wrap {
+.header_logo {
+	font-size: 2rem;
+	font-weight: 700;
+	color: $yellow;
+
+	&:not(:last-child) {
+		margin-right: 2rem;
+	}
+}
+
+.header_nav {
 	flex: auto;
+
+	@include bp($tablet, min) {
+		padding: 0 1rem;
+	}
+
+	@include bp($tablet - 1) {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 50%;
+		height: 100%;
+		padding: 2rem;
+		display: flex;
+		align-items: center;
+		transform: translateX(100%);
+		transition: transform 0.4s ease, opacity 0.4s ease;
+
+		background: $gray;
+		opacity: 0;
+	}
+
+	.body--open_menu_state & {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+.header_list {
+	margin: 0 -1.6rem -1.6rem 0;
+
+	@include bp($tablet, min) {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+}
+
+.header_item {
+	padding: 0 1.6rem 1.6rem 0;
+}
+
+.header_link {
+	font-size: 1.6rem;
+	line-height: 1;
+	color: $white;
+	text-transform: uppercase;
+	transition: color 0.3s ease;
+
+	&:focus,
+	&:hover {
+		color: $yellow;
+	}
 }
 
 

@@ -1,14 +1,18 @@
 import React, {Component} from "react";
 import './header.scss';
-import Navigation from '../navigation/navigation';
 import Burger from '../burger/burger';
-import Logo from '../logo/logo';
-import Lang from '../lg-btn/lg-btn';
+
 
 class Header extends Component {
     state = {
         isMenuOpen: false
     }
+
+    dataLink = [
+        {label: 'planets', url: '#'},
+        {label: 'person', url: '#'},
+        {label: 'starship', url: '#'},
+    ]
 
     handleClick = () => {
         this.setState((prevState) => {
@@ -19,7 +23,6 @@ class Header extends Component {
     }
 
     render() {
-        const { lgLinks, links, logoURL } = this.props.data;
         const { isMenuOpen } = this.state;
 
         const bodyOpenMenuState = 'body--open_menu_state';
@@ -33,15 +36,24 @@ class Header extends Component {
         return (
             <header className="header">
                 <div className="header_in">
-                    <Lang lgLinks={lgLinks} />
-                    <div className="header_logo_wrap">
-                        <Logo url={logoURL} />
-                    </div>
+                    <a href='#' className="header_logo">Star DB</a>
+                    <nav className="header_nav">
+                        <ul className="header_list">
+                            {this.dataLink.map((item, index) => {
+                                const {label, url} = item;
+                                return (<li key={index} className="header_item">
+                                    <a href={url} className="header_link">{label}</a>
+                                </li>)
+                            })
+                            }
+                        </ul>
+                    </nav>
                     <Burger handleClick={this.handleClick}/>
-                    <Navigation
-                        links={links}
-                        handleClick={this.handleClick}
-                    />
+                    <button
+                        onClick={this.props.onServiceChange}
+                        className="button button--yellow_color">
+                        Change Service
+                    </button>
                 </div>
             </header>
         );

@@ -1,5 +1,5 @@
 //---------------------------------------------fonts
-$font_1: 'GrtskGiga', sans-serif;
+$font_1: 'Roboto', sans-serif;
 $fontSizeBase: 10px;
 //---------------------------------------------fonts###
 //---------------------------------------------Points
@@ -10,7 +10,7 @@ $point_3: 768px;
 $point_4: 375px;
 //---------------------------------------------Points###
 //---------------------------------------------layout
-$pageWidth: 80rem;
+$pageWidth: 110rem;
 //---------------------------------------------layout###
 //---------------------------------------------colors
 $white: #fff;
@@ -19,10 +19,11 @@ $gray: #434343;
 $grayLight: #BEBEBE;
 $grayDark: #373737;
 $yellow: #FFCB46;
+$red: #ff6347;
 
 $colorTextBase: $grayDark;
 $colorLinkBase: #3856E5;
-$bodyBg: $grayLight;
+$bodyBg: $black;
 //---------------------------------------------colors###
 //---------------------------------------------global values
 $glRadius: 1rem;

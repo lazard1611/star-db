@@ -1,0 +1,23 @@
+@import '../../main';
+
+.error-ind {
+	font-size: 1.6rem;
+	line-height: 1.5;
+	text-align: center;
+	color: #FFCB46;
+
+	@include bp($tablet, min) {
+		grid-column: 1/3;
+	}
+}
+
+.error-ind__icon {
+	width: 4.2rem;
+	height: 4.2rem;
+	margin: 0 auto;
+	color: #FFCB46;
+
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
